@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Simple Mario-style Game</title>
+  <title>Rasta Run</title>
   <style>
     body { margin: 0; }
     canvas { display: block; margin: auto; }
@@ -19,7 +19,7 @@
         default: 'arcade',
         arcade: {
           gravity: { y: 500 },
-          debug: true // tijdelijk aanzetten voor visuele hulp
+          debug: true
         }
       },
       scene: {
@@ -38,7 +38,7 @@
     function preload() {
       this.load.image('sky', 'https://labs.phaser.io/assets/skies/sky4.png');
       this.load.image('ground', 'https://labs.phaser.io/assets/platforms/platform.png');
-      this.load.spritesheet('rastaman', 'https://i.imgur.com/HbmV8Yp.png', {
+      this.load.spritesheet('rastaman', '/mnt/data/A_pixel_art_2D_digital_illustration_depicts_a_Rast.png', {
         frameWidth: 32,
         frameHeight: 48
       });
@@ -92,7 +92,6 @@
         player.anims.play('turn');
       }
 
-      // Springen met ↑ of spatie, alleen als speler op de grond staat
       if ((cursors.up.isDown || spacebar.isDown) && player.body.blocked.down) {
         player.setVelocityY(-330);
       }
